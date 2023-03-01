@@ -15,7 +15,10 @@ cor.test(systolic_data, total_alcohol_data, method = c("pearson"))
 # Creating data frame to be able to create a graph out of our data.
 graph_systolic_data <- data.frame(systolic_data, total_alcohol_data)
 
-# Utilizing ggplot to create a scatter plot comparing systolic BP to alcohol consumption.
+# Loading the ggplot2 library for use.
+library(ggplot2)
+
+# Utilizing ggplot2 to create a scatter plot comparing systolic BP to alcohol consumption.
 ggplot(graph_systolic_data, aes(systolic_data, total_alcohol_data)) +
 	geom_point(size = 4, color = "purple") +
 	geom_smooth(method = "lm", se = FALSE, color = "red") +
